@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>建築師考試｜近三年選擇題練習</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">A</span><div><p class="eyebrow">ARCHITECT EXAM LAB</p><h1>建築師考試</h1></div></div>
+    <div class="source-note">資料取自考選部｜2023–2025</div>
+  </header>
+  <main class="shell">
+    <section id="homeView" class="home-view">
+      <div class="hero">
+        <div><p class="eyebrow accent">近三年考題整理</p><h2>把每一次練習，<br><em>變成真正的應試節奏。</em></h2><p class="hero-copy">選擇科目與模式，開始一段專注的建築師考試訓練。立即判分適合複習；計時模擬則完整還原考場節奏。</p></div>
+        <div class="hero-card"><span class="hero-number">03</span><span>可練習科目</span><small>每科含 2023–2025 年題目</small></div>
+      </div>
+      <section class="panel choose-panel">
+        <div class="section-label"><span>01</span><div><p class="eyebrow">SELECT SUBJECT</p><h3>選擇科目</h3></div></div>
+        <div id="subjectGrid" class="subject-grid"></div>
+      </section>
+      <section class="panel mode-panel">
+        <div class="section-label"><span>02</span><div><p class="eyebrow">CHOOSE MODE</p><h3>選擇測驗方式</h3></div></div>
+        <div class="mode-grid">
+          <button class="mode-card selected" data-mode="practice"><span class="mode-icon">↗</span><div><strong>一次一題・立即判分</strong><p>每題作答後立即看到正解、得分與解析提示。</p></div><span class="radio-dot"></span></button>
+          <button class="mode-card" data-mode="exam"><span class="mode-icon">◷</span><div><strong>計時模擬考</strong><p>依正式考試時間倒數，時間到後仍可繼續作答並於交卷時計分。</p></div><span class="radio-dot"></span></button>
+        </div>
+        <div class="start-row"><label>題目年度 <select id="yearSelect"><option value="all">近三年混合</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option></select></label><button id="startButton" class="primary">開始測驗 <span>→</span></button></div>
+      </section>
+      <section class="reference-strip"><div><p class="eyebrow">REFERENCE</p><strong>另外 3 科非選擇題</strong><p>建築結構、敷地計畫與都市設計、建築計畫與設計，可在資料夾內開啟原始 PDF 瀏覽。</p></div><div class="ref-tags"><span>PDF 原題</span><span>來源清單</span><span>答案檔</span></div></section>
+    </section>
+
+    <section id="quizView" class="quiz-view hidden">
+      <div class="quiz-head"><button id="backButton" class="back-button">← 返回選擇</button><div><p id="quizModeLabel" class="eyebrow accent"></p><h2 id="quizTitle"></h2></div><div id="timer" class="timer hidden"><span>剩餘時間</span><strong id="timerValue">02:00:00</strong></div></div>
+      <div class="progress-line"><div id="progressBar"></div></div>
+      <div class="quiz-layout"><aside class="question-nav panel"><p class="eyebrow">QUESTION MAP</p><div id="questionMap"></div><button id="submitButton" class="submit-button">交卷並計算分數</button></aside><article class="question-stage"><div class="question-meta"><span id="questionCounter"></span><span id="questionYear"></span></div><div class="question-card panel"><p id="questionStem" class="question-stem"></p><div id="options" class="options"></div><div id="practiceFeedback" class="feedback hidden"></div><div class="question-actions"><button id="prevButton" class="ghost">← 上一題</button><button id="nextButton" class="primary">下一題 <span>→</span></button></div></div></article></div>
+    </section>
+    <section id="resultView" class="result-view hidden"><div class="result-hero"><p class="eyebrow accent">RESULT</p><h2 id="resultTitle">測驗完成</h2><div class="score-ring"><strong id="scoreValue">0</strong><span>分</span></div><p id="resultSummary"></p></div><div class="result-actions"><button id="retryButton" class="primary">再測一次 <span>↗</span></button><button id="homeButton" class="ghost">返回首頁</button></div><div id="resultBreakdown" class="result-breakdown"></div></section>
+  </main>
+  <footer>建築師考試練習室 <span>／</span> 官方題目來源：考選部考畢試題查詢平台</footer>
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
